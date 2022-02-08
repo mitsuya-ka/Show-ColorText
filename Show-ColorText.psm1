@@ -20,6 +20,7 @@ function Show-ColorText {
 		if ( $PSStyle ) {
 			if ( $Word ) {
 				$index = $Line.IndexOf($Word, [System.StringComparison]::$sw)
+				$str = $null
 				while ($index -ge 0) {
 					$str += $Line.Substring(0, $index)
 					$str += $PSStyle.Foreground.$Color + $Line.Substring($index, $Word.Length) + $PSStyle.Reset
